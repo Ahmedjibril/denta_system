@@ -1,0 +1,138 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+.navbar {
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color:blue;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    border-radius: 4px;
+}
+
+.add-procedure-form-container {
+    max-width: 600px;
+    margin: 60px auto 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+.add-procedure-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-procedure-form h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Patient information styling */
+.patient-info {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.patient-info p {
+    margin: 5px 0;
+    font-size: 20px;
+    color: green;
+}
+
+/* Form labels and inputs */
+.add-procedure-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.add-procedure-form input,
+.add-procedure-form textarea,
+.add-procedure-form select {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.add-procedure-form input:focus,
+.add-procedure-form textarea:focus,
+.add-procedure-form select:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+/* Textarea specifically */
+.add-procedure-form textarea {
+    resize: vertical;
+    min-height: 50px; /* Enough space for notes */
+}
+
+/* Button styling */
+.add-procedure-form button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.add-procedure-form button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .add-procedure-form-container {
+        width: 90%;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

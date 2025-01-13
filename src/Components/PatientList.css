@@ -1,0 +1,47 @@
+body {
+    background-color:white;
+}
+.patient-list-container {
+    width: 100%;
+    margin: 90px auto;
+    box-sizing: border-box;
+    background-color:#ffffff;
+    color: black;
+}
+.patient-list-container h1{
+    margin-left: 40%;
+    margin-top: 0px;
+    color: green;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: 200px;
+    font-style: italic;
+}
+.patient-list {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+
+.patient-list th,
+.patient-list td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+.patient-list th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.patient-list-container button{
+    width: 80%;
+    margin-left:5%;
+}
+.patient-list tr:nth-child(even) {
+    background-color: white;
+}
+
+.patient-list tr:hover {
+    background-color: #f1f1f1;
+}

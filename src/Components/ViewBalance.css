@@ -1,0 +1,84 @@
+.navi-navbar {
+    position: sticky;
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.navi-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navi-navbar li {
+    display: inline;
+}
+
+.navi-navbar a {
+    color:blue;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navi-navbar a:hover {
+    border-radius: 4px;
+}
+
+.view-balance-receipt {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.view-balance-receipt h1 {
+    font-size: 1.5em;
+    color: #444;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.view-balance-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.1em;
+}
+.view-balance-item:last-child {
+    border-bottom: none;
+}
+.view-balance-label {
+    font-weight: bold;
+    color: #555;
+}
+.view-balance-value {
+    color: #333;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #0056b3;
+}

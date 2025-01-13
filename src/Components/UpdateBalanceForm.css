@@ -1,0 +1,64 @@
+.update-balance-form-container {
+<<<<<<< HEAD
+=======
+    position: fixed;
+>>>>>>> 9b6675f (Updated project)
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 100px auto;
+    box-sizing: border-box;
+}
+
+.update-balance-form {
+    background-color:#f4f4f4;
+    width: 50%;
+    padding: 10px;
+    margin: 20% auto;
+    margin-top: 0px;
+    height: 62vh;
+    box-sizing: border-box;
+}
+
+.update-balance-form label {
+    margin-bottom: 5px;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.update-balance-form input[type="text"],
+.update-balance-form input[type="number"] {
+    width: 49%;
+    padding: 8px;
+<<<<<<< HEAD
+    margin-bottom: 15px;
+    margin-left: 20%;
+    margin-top: 10px; 
+    border: 1px solid #c7e3aa;
+=======
+    margin-bottom: 10px;
+    margin-left: 20%;
+    margin-top: 5px; 
+    border: 1px solid white;
+>>>>>>> 9b6675f (Updated project)
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+
+.update-balance-form button {
+    width: 52%;
+    background-color: green;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20%;
+    margin-top: 35px; 
+;} 
+
+button:hover {
+    background-color: #45a049;
+}
+
