@@ -28,11 +28,7 @@ const UpdateBalanceForm = () => {
             if (response.ok) {
                 // Check for specific conditions like zero balance or overpayments
                 if (data.balance === 0) {
-<<<<<<< HEAD
                     alert("Balance is already zero, no update needed.");
-=======
-                    alert("Payment exceeds the outstanding balance. Payment not processed.");
->>>>>>> 9b6675f (Updated project)
                 } else if (data.overpayment) {
                     alert("Overpayment detected. You cannot pay more than the remaining balance.");
                 } else {

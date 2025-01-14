@@ -61,11 +61,6 @@ const AddPatientForm = () => {
 
                     <li><Link to="/update-balance">Update Balance</Link></li>
                     <li><Link to="/patient-report">Patient Report</Link></li>
-<<<<<<< HEAD
-=======
-                    <li><Link to="/create-user">Create User</Link></li>
-
->>>>>>> 9b6675f (Updated project)
                 </ul>
             </nav>
 

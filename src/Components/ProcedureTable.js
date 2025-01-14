@@ -1,20 +1,10 @@
 import React, { useEffect, useState } from 'react';
-<<<<<<< HEAD
-=======
-import { Link, useNavigate } from 'react-router-dom';
-
->>>>>>> 9b6675f (Updated project)
 import './ProcedureTable.css'; // Assuming you have CSS for styling
 
 const ProcedureTable = () => {
     const [procedures, setProcedures] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-<<<<<<< HEAD
-=======
-    const navigate = useNavigate();
-
->>>>>>> 9b6675f (Updated project)
 
     useEffect(() => {
         const fetchProcedures = async () => {
@@ -69,21 +59,7 @@ const ProcedureTable = () => {
     };
 
     return (
-<<<<<<< HEAD
         <div>
-=======
-              <div>
-            <nav className="navbar">
-                <ul>
-                    <li><Link to="/">Logout</Link></li>
-                    <li><Link to="/add-patient">Add Patient</Link></li>
-                    <li><Link to="/patient-list">Patient List</Link></li>
-                    <li><Link to="/update-balance">Update Balance</Link></li>
-                    <li><Link to="/patient-report">Patient Report</Link></li>
-                </ul>
-            </nav>
-
->>>>>>> 9b6675f (Updated project)
             <h2>Patient Procedures</h2>
             {Object.entries(groupedByPatient).map(([patientId, patientProcedures]) => (
                 <div key={patientId} style={{ marginBottom: "20px", border: "1px solid #ccc", padding: "10px" }}>
@@ -96,10 +72,6 @@ const ProcedureTable = () => {
                                 <th>Amount Paid</th>
                                 <th>Dentist Name</th>
                                 <th>Notes</th>
-<<<<<<< HEAD
-=======
-                                <th>Balance</th>
->>>>>>> 9b6675f (Updated project)
                             </tr>
                         </thead>
                         <tbody>
@@ -110,11 +82,6 @@ const ProcedureTable = () => {
                                     <td>{procedure.amountPaid}</td>
                                     <td>{procedure.dentistName}</td>
                                     <td>{procedure.notes}</td>
-<<<<<<< HEAD
-=======
-                                    <td>{procedure.balance}</td>
-
->>>>>>> 9b6675f (Updated project)
                                 </tr>
                             ))}
                             <tr>
