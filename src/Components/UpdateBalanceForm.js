@@ -82,7 +82,7 @@ const UpdateBalanceForm = () => {
                         type="number"
                         value={amountPaid}
                         onChange={(e) => setAmountPaid(e.target.value)}
-                        step="0.01"
+                        step="100"
                         required
                     /><br />
                     <button type="submit">Update Balance</button>

@@ -1,57 +1,66 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
- import './CreateUserForm.css';
+import './CreateUserForm.css';
 
 const CreateUserForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [role, setRole] = useState('user'); // Default role is 'user'
+    const [role, setRole] = useState('user'); 
     const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem('AccessToken');
         if (!token) {
-            navigate('/'); // Redirect to login if not authenticated
+            navigate('/'); 
+        } else {
+            // Decode JWT token to check role
+
+            const decodedToken = JSON.parse(atob(token.split('.')[1])); 
+            if (decodedToken.role !== 'admin') {
+                alert('Only admins can access this page.');
+                navigate('/'); 
+            }
         }
     }, [navigate]);
+// Frontend logic to send the role when creating a user
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        if (!username || !password || !email) {
-            alert('All fields are required');
-            return;
+    event.preventDefault();
+    if (!username || !password || !email) {
+        alert('All fields are required');
+        return;
+    }
+
+    const user = { username, password, email, role };
+
+    try {
+        const response = await fetch('http://localhost:8083/create-user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('AccessToken')}`, 
+            },
+            body: JSON.stringify(user),
+        });
+
+        if (!response.ok) {
+            const errorMessage = await response.text();
+            throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorMessage}`);
         }
 
-        const user = { username, password, email, role };
+        alert('User created successfully');
+        setUsername('');
+        setPassword('');
+        setEmail('');
+        setRole('');
+        navigate('/'); 
+    } catch (error) {
+        console.error('Error creating user:', error.message);
+        alert('Failed to create user: ' + error.message);
+    }
+};
 
-        try {
-            const response = await fetch('http://localhost:8083/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('AccessToken')}`, // Admin's token
-                },
-                body: JSON.stringify(user),
-            });
-
-            if (!response.ok) {
-                const errorMessage = await response.text();
-                throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorMessage}`);
-            }
-
-            alert('User created successfully');
-            setUsername('');
-            setPassword('');
-            setEmail('');
-            setRole('user');
-
-            navigate('/'); // Redirect to user list or dashboard
-        } catch (error) {
-            console.error('Error creating user:', error.message);
-            alert('Failed to create user: ' + error.message);
-        }
-    };
 
     return (
         <div>
@@ -65,10 +74,10 @@ const CreateUserForm = () => {
                     <li><Link to="/create-user">Create User</Link></li>
                 </ul>
             </nav>
-
             <div className="create-user-form-container">
+            <h5>Create A User</h5>
+
                 <form className="create-user-form" onSubmit={handleSubmit}>
-                    <h5>Create User</h5>
                     <label>Username:</label>
                     <input
                         type="text"
@@ -95,7 +104,12 @@ const CreateUserForm = () => {
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                     </select>
-                    <button type="submit">Create User</button>
+                    <div class="button-container">
+            <button type="submit" class="create-btn">Create User</button>
+            <button onClick={() => navigate('/')} className="back-btn">
+            Back
+        </button>            </div>
+
                 </form>
             </div>
         </div>

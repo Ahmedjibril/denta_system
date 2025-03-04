@@ -4,6 +4,7 @@ table {
     background-color: white;
 }
 
+
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
@@ -16,4 +17,60 @@ th {
 
 tr:hover {
     background-color: #f1f1f1;
+}
+/* .total-balance{
+    margin-top: 20px;
+    margin-left: 1%;
+}
+.total-balance */
+.total-balance {
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold;
+    color: #333; /* Dark gray text */
+    margin-top: 10px; /* Add space above */
+    padding: 10px; /* Add padding */
+    background-color: #f8f8f8; /* Light gray background */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Make it fit the content */
+}
+
+.balance-amount {
+    color: red; /* Make balance value red */
+    font-size: 20px; /* Slightly larger font */
+    font-weight: bold;
+}
+
+.total-balance {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.summary-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Space between columns */
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-item {
+    font-size: 18px;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.balance-amount {
+    color: red;
+    font-weight: bold;
 }

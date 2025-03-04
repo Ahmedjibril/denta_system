@@ -35,26 +35,31 @@
 }
 
 .view-balance-receipt {
-    max-width: 700px;
-    margin: 20px auto;
+    width: 100%;
+    margin: 80px auto;
+    height: 60vh;
     padding: 20px;
+    background-color: cadetblue;
+    color: white;
     border-radius: 10px;
     font-family: Arial, sans-serif;
     text-align: center;
 }
 .view-balance-receipt h1 {
-    font-size: 1.5em;
-    color: #444;
-    margin-bottom: 20px;
+    font-size: 32px;
+    color: black;
+    margin-bottom: 40px;
     margin-top: 50px;
-    text-transform: uppercase;
+    margin-right: 15%;
     letter-spacing: 1px;
 }
 .view-balance-item {
+    width: 40%;
     display: flex;
-    justify-content: space-between;
+    margin-left: 25%;
+    justify-content:space-between;
     padding: 10px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid gold;
     font-size: 1.1em;
 }
 .view-balance-item:last-child {
@@ -62,23 +67,28 @@
 }
 .view-balance-label {
     font-weight: bold;
-    color: #555;
+    color: white;
+    font-size: 25px;
+    font-style:italic;
 }
 .view-balance-value {
-    color: #333;
+    color: black;
+    font-size: 30px;
+    font-style:inherit;
 }
 button {
-    width: 100%;
+    width: 41%;
+    margin-right:9%;
     padding: 12px;
     font-size: 1em;
-    color: #ffffff;
-    background-color: #007bff;
+    color: black;
+    background-color: gray;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 40px;
     transition: background-color 0.3s ease;
 }
 button:hover {
-    background-color: #0056b3;
+    background-color: white;
 }

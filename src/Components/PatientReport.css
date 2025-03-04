@@ -31,22 +31,20 @@ nav ul li a:hover {
     width: 600px;
     height: 50vh;
     margin: 20px;
-    margin-left: 30%;
+    margin-top: 5%;
+    margin-left: 28%;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .patient-report-container h2 {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 35px;
+    font-weight:600;
     margin-top: 40px;
     margin-bottom: 10px;
     text-align: center;
-    color: #45a049;
-    font-style: oblique;
+    color: black;
+    font-style:normal;
 }
 
 .patient-report-container input {
@@ -55,9 +53,11 @@ nav ul li a:hover {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 25%;
-    border: 1px solid green;
+    border:none;
     border-radius: 5px;
     box-sizing: border-box;
+    outline: none;
+    font-size: 20px;
 }
 
 .patient-report-container button {
@@ -66,157 +66,45 @@ nav ul li a:hover {
     margin-top:20px ;
     margin-left: 5px;
     background-color: gray;
-    color: white;nav {
-        overflow: hidden;
-    }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 10px;
-        padding: 0;
-        display: flex;
-        margin-left: 22%;
-        gap: 30px;
-        font-size: 20px;
-        font-style:oblique;
-        margin-bottom: 5%;
-        
-     }
-    
-    nav ul li a {
-        display: flex;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-    
-    nav ul li a:hover {
-        color: black;
-    }
-    
-    .patient-report-container {
-        width: 600px;
-        height: 40vh;
-        margin: 20px;
-        margin-left: 30%;
-        padding: 20px;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .patient-report-container h6 {
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        margin-top: 0px;
-        text-align: center;
-        color: #45a049;
-        font-style: oblique;
-    }
-    
-    .patient-report-container input {
-        width: 50%;
-        padding: 10px;
-        margin-bottom: 40px;
-        margin-left: 25%;
-        border: 1px solid green;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-    
-    .patient-report-container button {
-        padding: 10px 20px;
-        margin-right: 10px;
-        margin-top:20px ;
-        margin-left: 30px;
-        background-color: gray;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        border: 1px solid gold;
-    }
-    
-    .patient-report-container button:hover {
-        background-color: #45a049;
-    }
-    
-    .patient-report-container pre {
-        background-color: #eee;
-        padding: 10px;
-        border-radius: 4px;
-        margin-left: 50%;
-        overflow-x: auto;
-        white-space: pre-wrap;
-    }
-    @media print {
-        nav {
-            display: none;
-        }
-    
-        .patient-report-container {
-            width: auto;
-            margin: 0;
-            padding: 0;
-            box-shadow: none;
-            border: none;
-        }
-    
-        .patient-report-container h6 {
-            font-size: 20px;
-            color: #333;
-        }
-    
-        .patient-report-container input,
-        .patient-report-container button {
-            display: none;
-        }
-    
-        .patient-report-container pre {
-            white-space: pre-wrap;
-            font-size: 16px;
-            color: #000;
-        }
-    }
+    color: white;
     border: none;
+    outline: none;
     border-radius: 5px;
     cursor: pointer;
-    border: 1px solid gold;
+    border: 1px solid beige;
 }
 
 .patient-report-container button:hover {
     background-color: #45a049;
 }
 
+.patient-report-container p {
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 1%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    color: black;
+    font-size: 20px;
+    width: 45%;
+    background-color: white;
+}
 .patient-report-container pre {
-    background-color: #eee;
     padding: 10px;
     border-radius: 4px;
     margin-left: 50%;
     overflow-x: auto;
     white-space: pre-wrap;
+    color: black;
+    font-size: 20px;
+    width: 65%;
+    background-color: white;
 }
 @media print {
     nav {
         display: none;
+        color: black;
     }
-
-    .patient-report-container {
-        width: auto;
-        margin: 0;
-        padding: 0;
-        box-shadow: none;
-        border: none;
-    }
-/* 
-    .patient-report-container h2 {
-
-        font-size: 20px;
-        color: #333;
-    } */
 
     .patient-report-container input,
     .patient-report-container button {
@@ -226,6 +114,6 @@ nav ul li a:hover {
     .patient-report-container pre {
         white-space: pre-wrap;
         font-size: 16px;
-        color: #000;
+        color: black;
     }
 }

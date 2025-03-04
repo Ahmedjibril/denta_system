@@ -1,20 +1,26 @@
 // import React, { useEffect, useState } from "react";
 
 // const Procedures = () => {
-//   const [procedures, setProcedures] = useState([]);
+//     const [procedureOptions, setProcedureOptions] = useState([]);
 
+//   // Fetching the procedure options
 //   useEffect(() => {
-//     // Fetch data from your API for procedures
-//     fetch("http://localhost:8083/procedures")
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error(`HTTP error! Status: ${response.status}`);
+//     const fetchProcedures = async () => {
+//         try {
+//             const response = await fetch('http://localhost:8083/get/procedures');
+//             if (!response.ok) {
+//                 throw new Error('Failed to fetch procedures');
+//             }
+//             const procedures = await response.json();
+//             console.log('Fetched Procedures:', procedures); // Check if data is fetched
+//             setProcedureOptions(procedures);
+//         } catch (error) {
+//             console.error('Error fetching procedures:', error);
 //         }
-//         return response.json();
-//       })
-//       .then((data) => setProcedures(data))
-//       .catch((error) => console.error("Error fetching procedures:", error));
-//   }, []);
+//     };
+
+//     fetchProcedures();
+// }, []);
 
 //   return (
 //     <div>
@@ -29,7 +35,7 @@
 //           </tr>
 //         </thead>
 //         <tbody>
-//           {procedures.map((procedure) => (
+//           {setProcedureOptions.map((procedure) => (
 //             <tr key={procedure.id}>
 //               <td>{procedure.id}</td>
 //               <td>{procedure.name}</td>

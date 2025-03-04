@@ -61,12 +61,14 @@ const AddPatientForm = () => {
 
                     <li><Link to="/update-balance">Update Balance</Link></li>
                     <li><Link to="/patient-report">Patient Report</Link></li>
+                    <li><Link to="/create-user">Create User</Link></li>
+
                 </ul>
             </nav>
 
             <div className="add-patient-form-container">
                 <form className="add-patient-form" onSubmit={handleSubmit}>
-                    <h5>Add Patients</h5>
+                    <h5>Add Patient</h5>
                     <label>Name:</label>
                     <input
                         type="text"

@@ -6,6 +6,7 @@ const ViewBalance = () => {
     const { state } = useLocation();
     const { patientId, name, phoneNumber, location } = state || {};
     const [balance, setBalance] = useState(null);
+    const [patientData, setPatientData] = useState({ name, phoneNumber, location }); // Initialize with data from state
     const navigate = useNavigate();
 
     const fetchBalance = async () => {
@@ -31,6 +32,13 @@ const ViewBalance = () => {
             const data = await response.json();
             if (data.balance !== undefined) {
                 setBalance(data.balance);
+                // Update other patient details in case they were not set
+                setPatientData(prevState => ({
+                    ...prevState,
+                    name: data.name || prevState.name,
+                    phoneNumber: data.phoneNumber || prevState.phoneNumber,
+                    location: data.location || prevState.location,
+                }));
             } else {
                 alert('Failed to retrieve balance. Please try again later.');
             }
@@ -59,21 +67,21 @@ const ViewBalance = () => {
             </nav>
             <div className="view-balance-receipt">
                 <h1>Patient Balance Receipt</h1>
-                <div className="view-balance-item">
+                  {/* <div className="view-balance-item">
                     <span className="view-balance-label">Patient ID:</span>
                     <span className="view-balance-value">{patientId}</span>
-                </div>
+                </div> */}
                 <div className="view-balance-item">
-                    <span className="view-balance-label">Name:</span>
-                    <span className="view-balance-value">{name}</span>
+                    <span className="view-balance-label">Patient Name:</span>
+                    <span className="view-balance-value">{patientData.name}</span>
                 </div>
                 <div className="view-balance-item">
                     <span className="view-balance-label">Phone Number:</span>
-                    <span className="view-balance-value">{phoneNumber}</span>
+                    <span className="view-balance-value">{patientData.phoneNumber}</span>
                 </div>
                 <div className="view-balance-item">
                     <span className="view-balance-label">Location:</span>
-                    <span className="view-balance-value">{location}</span>
+                    <span className="view-balance-value">{patientData.location}</span>
                 </div>
                 <div className="view-balance-item">
                     <span className="view-balance-label">Balance:</span>

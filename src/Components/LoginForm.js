@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 
@@ -6,6 +6,16 @@ const LoginForm = () => {
     const [formData, setFormData] = useState({ username: '', password: '' });
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        // Add a class to the body for login page background
+        document.body.classList.add('login-background');
+        
+        // Remove the class when the component unmounts
+        return () => {
+            document.body.classList.remove('login-background');
+        };
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -23,9 +33,10 @@ const LoginForm = () => {
             }
     
             const data = await response.json();
-            localStorage.setItem('AccessToken', data.token); // Store token in localStorage
+            
+            localStorage.setItem('AccessToken', data.token);
+            localStorage.setItem('username', formData.username);  
     
-            // Check if token is successfully stored
             if (localStorage.getItem('AccessToken')) {
                 navigate('/add-patient');
             } else {
@@ -36,29 +47,30 @@ const LoginForm = () => {
         }
     };
     
-
     return (
-        <form className="login-form" onSubmit={handleSubmit}>
-            <h2>Login</h2>
-            <label>
-                Username:
-                <input
-                    type="text"
-                    value={formData.username}
-                    onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                />
-            </label>
-            <label>
-                Password:
-                <input
-                    type="password"
-                    value={formData.password}
-                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                />
-            </label>
-            <button type="submit">Login</button>
-            {error && <p>{error}</p>}
-        </form>
+        <div className="login-page">
+            <form className="login-form" onSubmit={handleSubmit}>
+                <h2>Login</h2>
+                <label>
+                    Username:
+                    <input
+                        type="text"
+                        value={formData.username}
+                        onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                    />
+                </label>
+                <label>
+                    Password:
+                    <input
+                        type="password"
+                        value={formData.password}
+                        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    />
+                </label>
+                <button type="submit">Login</button>
+                {error && <div className="error">{error}</div>}
+            </form>
+        </div>
     );
 };
 

@@ -1,51 +1,72 @@
-
 .update-balance-form-container {
     display: flex;
     width: 100%;
     padding: 10px;
     margin: 100px auto;
     box-sizing: border-box;
+    background-color: cadetblue;
+    height: 60vh;
 }
 
 .update-balance-form {
-    background-color:#f4f4f4;
     width: 50%;
     padding: 10px;
-    margin: 20% auto;
+    margin: 15% auto;
+    margin-left: 27%;
     margin-top: 0px;
-    height: 62vh;
     box-sizing: border-box;
 }
 
 .update-balance-form label {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     margin-left: 20%;
     margin-top: 5%;
+    outline: none; 
+    border: none;
+    color: black;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    
+
 }
 
 .update-balance-form input[type="text"],
 .update-balance-form input[type="number"] {
-    width: 49%;
+    width: 39%;
     padding: 8px;
     margin-bottom: 15px;
     margin-left: 20%;
-    margin-top: 10px; 
-    border: 1px solid #c7e3aa;
+    margin-top: 5px; 
     font-size: 0.9rem;
-    border-radius: 5px;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+.update-balance-form input[type="text"]:hover,
+.update-balance-form input[type="number"]:hover,
+.update-balance-form input[type="text"]:focus,
+.update-balance-form input[type="number"]:focus {
+    outline: none; 
+    border: none; 
+    background-color: white;
+
 }
 
 
 .update-balance-form button {
-    width: 52%;
-    background-color: green;
+    width: 42%;
+    background-color: gray;
     padding: 10px;
-    color: white;
+    color: black;
     border: none;
-    border-radius: 4px;
+    border-radius: 15px;
     cursor: pointer;
     margin-left: 20%;
-    margin-top: 35px; 
+    margin-top: 10%; 
 ;} 
 
 button:hover {

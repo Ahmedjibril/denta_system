@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const PatientProcedures = () => {
   const [procedures, setProcedures] = useState([]);
 
   useEffect(() => {
-    // Fetch data from your API for patient procedures
+
     fetch("http://localhost:8083/patient-procedures")
       .then((response) => {
         if (!response.ok) {
@@ -16,7 +17,6 @@ const PatientProcedures = () => {
       .catch((error) => console.error("Error fetching procedures:", error));
   }, []);
 
-  // Group procedures by patient_id
   const groupedByPatient = procedures.reduce((acc, procedure) => {
     const patientId = procedure.patient_id;
     if (!acc[patientId]) {
@@ -26,13 +26,22 @@ const PatientProcedures = () => {
     return acc;
   }, {});
 
-  // Helper function to calculate total balance for each patient
   const calculateTotalBalance = (patientProcedures) => {
     return patientProcedures.reduce((acc, procedure) => acc + procedure.balance, 0);
   };
 
   return (
     <div>
+      <nav className="navbar">
+        <ul>
+          <li><Link to="/">Logout</Link></li>
+          <li><Link to="/add-patient">Add Patient</Link></li>
+          <li><Link to="/patient-list">Patient List</Link></li>
+          <li><Link to="/update-balance">Update Balance</Link></li>
+          <li><Link to="/procedure-table">Procedure Table</Link></li>
+        </ul>
+      </nav>
+
       <h2>Patient Procedures</h2>
       {Object.entries(groupedByPatient).map(([patientId, patientProcedures]) => (
         <div key={patientId} style={{ marginBottom: "20px", border: "1px solid #ccc", padding: "10px" }}>
@@ -45,7 +54,6 @@ const PatientProcedures = () => {
                 <th>Amount Paid</th>
                 <th>Dentist Name</th>
                 <th>Notes</th>
-        
               </tr>
             </thead>
             <tbody>

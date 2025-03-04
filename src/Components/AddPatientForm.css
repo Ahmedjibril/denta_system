@@ -1,17 +1,26 @@
-/* AddPatientForm.css */
+/* body {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+} */
 .add-patient-form-container {
-    max-width: 600px;
-    margin: 120px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 10px;
+    margin: 100px auto;
+    box-sizing: border-box;
+    background-color: cadetblue;
+    height: 75vh;
+    
 }
 
 .add-patient-form h5 {
     text-align: center;
-    color: #333;
-    font-size: 24px;
+    margin-right: 20%;
+    color: white;
+    font-size: 39px;
+    margin-bottom: 20px;
 }
 
 .add-patient-form {
@@ -21,37 +30,53 @@
 
 .add-patient-form label {
     font-weight: bold;
+    margin-left: 33%;
     margin-bottom: 5px;
-    color: #555;
+    color: black;
+    font-size: 20px;
+    font-style: normal;
+
+
 }
 
 .add-patient-form input,
 .add-patient-form textarea,
 .add-patient-form select {
+    width: 30%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    margin-left: 33%;
+    border: 1px solid white;
     border-radius: 4px;
     font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    border-radius: 15px;
+
 }
 
 .add-patient-form input:focus,
 .add-patient-form textarea:focus,
 .add-patient-form select:focus {
     outline: none;
-    border-color: #4CAF50;
 }
 
 .add-patient-form button {
+    width: 31.5%;
     padding: 12px;
-    background-color: #4CAF50;
+    background-color:black;
     color: white;
     border: none;
     margin-top: 30px;
+    margin-left: 33%;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 15px;
 }
 
 .add-patient-form button:hover {

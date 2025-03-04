@@ -1,13 +1,9 @@
-/* EditProcedure Form CSS */
-
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
 }
 
-/* Navbar styling remains the same if shared between forms */
 .navbar {
     background-color: #f4f4f4;
     padding: 10px 0;
@@ -44,15 +40,13 @@ body {
     border-radius: 4px;
 }
 
-/* EditProcedure form container */
 .edit-procedure-form-container {
     max-width: 600px;
     margin: 80px auto 0 auto;
     padding: 20px;
-    background-color: #f4f4f4;
-; /* Light orange background */
+    background-color: black;
     border-radius: 8px;
-    border: 2px solid white; /* Orange border */
+    border: 2px solid none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -65,11 +59,10 @@ body {
 .edit-procedure-form h1 {
     text-align: center;
     font-size: 24px;
-    color: black; /* Orange color for edit mode */
+    color: black; 
     margin-bottom: 20px;
 }
 
-/* Patient information styling specific to EditProcedure */
 .edit-patient-info {
     background-color: #f9f9f9;
     padding: 10px;
@@ -84,7 +77,6 @@ body {
     color: green;
 }
 
-/* Form labels and inputs specific to EditProcedure */
 .edit-procedure-form label {
     font-weight: bold;
     margin-bottom: 5px;
@@ -106,19 +98,17 @@ body {
 .edit-procedure-form textarea:focus,
 .edit-procedure-form select:focus {
     outline: none;
-    border-color: #4CAF50;
+    border-color: gray;
 }
 
-/* Textarea styling for EditProcedure form */
 .edit-procedure-form textarea {
     resize: vertical;
     min-height: 50px;
 }
 
-/* Primary button styling for EditProcedure */
 .edit-procedure-button-primary {
     padding: 12px 20px;
-    background-color: #4CAF50;
+    background-color:grey;
     color: white;
     border: none;
     border-radius: 4px;
@@ -129,10 +119,9 @@ body {
 }
 
 .edit-procedure-button-primary:hover {
-    background-color: #45a049;
+    background-color:grey;
 }
 
-/* Delete button styling for EditProcedure */
 .edit-procedure-button-delete {
     padding: 12px 20px;
     background-color: #f4f4f4;
@@ -149,7 +138,6 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Indicator label for Edit Mode */
 .edit-mode-label {
     display: inline-block;
     padding: 5px 10px;
@@ -164,7 +152,6 @@ body {
     width: 100%;
 }
 
-/* Responsive design for EditProcedure form */
 @media (max-width: 768px) {
     .edit-procedure-form-container {
         width: 90%;
